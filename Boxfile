@@ -1,0 +1,11 @@
+web1:
+ name: "satis"
+ shared_writable_dirs:
+ - web
+ document_root: "web"
+ cron:
+ - "* * * * *" : "bin/satis build --skip-errors config.json web"
+ after_build:
+ - "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php; fi; php composer.phar install --prefer-source"
+ - "if [ -f config.json ]; then bin/satis build --skip-errors config.json web; fi;"
+

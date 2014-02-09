@@ -1,0 +1,10 @@
+/.settings
+/.project
+/.buildpath
+/satis.phar
+/vendor
+/phpunit.xml
+composer.phar
+composer.lock
+README.html
+.DS_Store
